@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/home",
+    "pages/shoppingcar/shoppingcar"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#38cfba",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "书城",
+        "iconPath": "images/tabbar/bookstore_default@3x.png",
+        "selectedIconPath": "images/tabbar/bookstore_selected@3x.png"
+      },
+      {
+        "pagePath": "pages/shoppingcar/shoppingcar",
+        "text": "购物车",
+        "iconPath": "images/tabbar/create_icon_normal@3x.png",
+        "selectedIconPath": "images/tabbar/create_icon_normal@3x.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "images/tabbar/my_icon_normal@3x.png",
+        "selectedIconPath": "images/tabbar/my_icon_selected@3x.png"
+      }
+    ]
+  }
+}

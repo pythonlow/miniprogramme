@@ -1,0 +1,66 @@
+/**index.wxss**/
+.container {
+  padding-top: 20rpx;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  color: #aaa;
+  font-size: small;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  /* width: 128rpx;
+  height: 128rpx; */
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+
+.book-panel {
+  padding: 0 24rpx;
+  background: #fff;
+}
+.book-panel .panel-head {
+  height: 96rpx;
+  line-height: 96rpx;
+  margin-bottom: 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.book-panel .panel-head-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.weui-tabs-bar__wrp {
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.weui-tabs-swiper {
+  width: 100%;
+  height: 100px;
+}
+
+.tab-content {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+
+.weui-tabs-bar__title {
+  margin: 0px 10px;
+}
+
+.tab-bar-title__selected {
+  font-size: 20px;
+  font-weight: bold;
+}

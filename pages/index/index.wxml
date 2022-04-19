@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<scroll-view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="book-panel">
+    <mp-tabs 
+    tabs="{{tabs}}" 
+    activeTab="{{activeTab}}" 
+    swiperClass="weui-tabs-swiper" 
+    bindtabclick="onTabClick" 
+    bindchange="onChange" 
+    activeClass="tab-bar-title__selected">
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" slot="tab-content-{{index}}"> {{item.title}} </view>
+        <view wx:for="{{books}}" wx:key="bid">
+        {{bid}}
+        </view>
+      </block>
+    </mp-tabs>
+    <view class="panel-body">
+      <!-- 推荐图书 S -->
+      <!-- <view wx:for="{{recommendBook}}" wx:if="{{index < 3}}" class="book-item" catchtap="previewReadBook" data-bookinfo="{{item}}">
+        <view class="cover">
+          <image mode="aspectFill" src="{{item.coverUrl}}"></image>
+        </view>
+        <view class="content">
+          <view class="title">{{item.title}}</view>
+          <view class="author">{{item.author}}</view>
+          <view class="book-tag">
+            <text class="tag-red tag">红色</text>
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</scroll-view>
