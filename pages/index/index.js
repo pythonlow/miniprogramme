@@ -10,7 +10,7 @@ Page({
     }
   },
   data: {
-    books:[],
+    books: [],
     tabs: [],
     activeTab: 0,
     userInfo: {},
@@ -31,32 +31,48 @@ Page({
         canIUseGetUserProfile: true
       })
     }
-      const titles = ['推荐', '排行', '其他']
-      const tabs = titles.map(item => ({title: item}))
-      this.setData({tabs})
-     
+    const titles = ['推荐', '排行', '其他']
+    const tabs = titles.map(item => ({ title: item }))
+    this.setData({ tabs })
+
   },
   onTabClick(e) {
     const index = e.detail.index
     this.setData({
       activeTab: index
     })
-    if(index=='1'){
-      console.log(1)
-    wx.request({
-      url: 'http://localhost:3000/allBook',
-      method:'GET',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      success:function(res){
-        console.log(res.data)
-      },
-      fail:function(res){
-        console.log('fail')  
-      }
-    })
-  }
+    if (index == '1') {
+      let that = this
+      wx.request({
+        url: 'http://localhost:3000/allBook',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        success: function (res) {
+          for (let i = 0; i < res.data.length; i++) {
+            var newarray = {
+              bId: res.data[i].bId,
+              btitle: res.data[i].bTitle,
+              bcover: '../../../images/books_cover/' + res.data[i].bCover,
+              author: res.data[i].author,
+              press: res.data[i].press,
+              publishtime: res.data[i].publishtime,
+              price: res.data[i].price,
+              rating: res.data[i].rating
+            }
+            that.data.books = that.data.books.concat(newarray)
+          }
+          that.setData({
+            books: that.data.books
+          })
+          // console.log(that.data.books)
+        },
+        fail: function (res) {
+          console.log(res)
+        }
+      })
+    }
   },
 
   onChange(e) {

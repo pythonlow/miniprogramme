@@ -1,6 +1,12 @@
 {
   
   "usingComponents": {
-    "mp-tabs": "@miniprogram-component-plus/tabs"
+    "mp-tabs": "@miniprogram-component-plus/tabs",
+    "l-card":"/miniprogram_npm/lin-ui/card",
+    "l-price":"/miniprogram_npm/lin-ui/price",
+    "mp-col": "@miniprogram-component-plus/col",
+    "mp-row": "@miniprogram-component-plus/row",
+    "l-segment":"/miniprogram_npm/lin-ui/segment",
+    "l-tabs":"/miniprogram_npm/lin-ui/tabs"
 }
 }
